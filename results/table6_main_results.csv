@@ -1,0 +1,9 @@
+method,edufuse_3cls_wf1_mean,edufuse_3cls_wf1_sd,edufuse_fine_map_mean,edufuse_fine_map_sd,cmumosei_wf1_mean,cmumosei_wf1_sd,mustard_wf1_mean,mustard_wf1_sd,hatemm_wf1_mean,hatemm_wf1_sd
+RoBERTa (text-only),71.4,0.5,58.2,0.6,78.6,0.4,65.2,0.7,72.4,0.6
+wav2vec 2.0 (audio-only),62.3,0.6,49.7,0.7,67.3,0.5,61.8,0.8,64.1,0.7
+Video Swin-T (video-only),65.9,0.5,52.4,0.6,70.2,0.5,63.5,0.7,68.7,0.6
+Early fusion,76.8,0.5,64.1,0.6,82.1,0.4,70.4,0.6,76.5,0.5
+MulT,80.6,0.4,70.5,0.5,84.3,0.3,73.9,0.5,78.9,0.4
+MISA,79.4,0.4,69.2,0.5,84.1,0.3,73.2,0.5,78.2,0.5
+UniMSE,80.2,0.4,70.1,0.4,84.0,0.3,73.6,0.5,78.6,0.4
+SuFGMF,84.7,0.3,76.3,0.4,86.7,0.3,77.0,0.4,81.7,0.4

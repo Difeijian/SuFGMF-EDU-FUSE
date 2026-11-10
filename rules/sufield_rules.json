@@ -1,0 +1,190 @@
+{
+  "description": "Author-defined fusion rules R1-R18 (Table 1). Standard numbers record the design analogy, not a formal equivalence.",
+  "problem_types": {
+    "HF": "harmful field (cross-modal conflict)",
+    "IF": "insufficient field (weak signal)",
+    "HS": "harmful substance (channel contamination)",
+    "AF": "absent field (missing modality)"
+  },
+  "thresholds": {
+    "tau": 0.45,
+    "phi": 0.6,
+    "eta_A": null,
+    "eta_V": null,
+    "note": "eta_A and eta_V are not reported in the paper; fill in from the trained model."
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "problem_type": "IF",
+      "trigger": "c_L < tau",
+      "operator": "compensatory",
+      "inspiring_standards": [
+        "2.2.1",
+        "5.2.1"
+      ]
+    },
+    {
+      "id": "R2",
+      "problem_type": "IF",
+      "trigger": "c_A < tau",
+      "operator": "compensatory",
+      "inspiring_standards": [
+        "2.2.1",
+        "5.2.1"
+      ]
+    },
+    {
+      "id": "R3",
+      "problem_type": "IF",
+      "trigger": "c_V < tau",
+      "operator": "compensatory",
+      "inspiring_standards": [
+        "2.2.1",
+        "5.2.1"
+      ]
+    },
+    {
+      "id": "R4",
+      "problem_type": "HF",
+      "trigger": "delta_LA > phi",
+      "operator": "disentanglement",
+      "inspiring_standards": [
+        "1.2.1",
+        "1.2.2"
+      ]
+    },
+    {
+      "id": "R5",
+      "problem_type": "HF",
+      "trigger": "delta_LV > phi",
+      "operator": "disentanglement",
+      "inspiring_standards": [
+        "1.2.1",
+        "1.2.2"
+      ]
+    },
+    {
+      "id": "R6",
+      "problem_type": "HF",
+      "trigger": "delta_AV > phi",
+      "operator": "disentanglement",
+      "inspiring_standards": [
+        "1.2.1",
+        "1.2.2"
+      ]
+    },
+    {
+      "id": "R7",
+      "problem_type": "HF",
+      "trigger": "delta_ij > phi for two or more pairs",
+      "operator": "disentanglement",
+      "inspiring_standards": [
+        "1.2.3"
+      ]
+    },
+    {
+      "id": "R8",
+      "problem_type": "HS",
+      "trigger": "acoustic noise score > eta_A",
+      "operator": "recalibration",
+      "inspiring_standards": [
+        "1.2.2"
+      ]
+    },
+    {
+      "id": "R9",
+      "problem_type": "HS",
+      "trigger": "visual noise score > eta_V",
+      "operator": "recalibration",
+      "inspiring_standards": [
+        "1.2.2"
+      ]
+    },
+    {
+      "id": "R10",
+      "problem_type": "AF",
+      "trigger": "h_L unavailable",
+      "operator": "generative_completion",
+      "inspiring_standards": [
+        "1.1.1",
+        "5.2.1"
+      ]
+    },
+    {
+      "id": "R11",
+      "problem_type": "AF",
+      "trigger": "h_A unavailable",
+      "operator": "generative_completion",
+      "inspiring_standards": [
+        "1.1.1",
+        "5.2.1"
+      ]
+    },
+    {
+      "id": "R12",
+      "problem_type": "AF",
+      "trigger": "h_V unavailable",
+      "operator": "generative_completion",
+      "inspiring_standards": [
+        "1.1.1",
+        "5.2.1"
+      ]
+    },
+    {
+      "id": "R13",
+      "problem_type": "IF",
+      "trigger": "c_m < tau for two modalities",
+      "operator": "compensatory",
+      "inspiring_standards": [
+        "2.1.2"
+      ]
+    },
+    {
+      "id": "R14",
+      "problem_type": "HF",
+      "trigger": "adversarial modality pair",
+      "operator": "disentanglement",
+      "inspiring_standards": [
+        "1.2.4"
+      ]
+    },
+    {
+      "id": "R15",
+      "problem_type": "HS",
+      "trigger": "acoustic and visual noise scores above eta_A and eta_V",
+      "operator": "recalibration",
+      "inspiring_standards": [
+        "1.1.8",
+        "2.2.5"
+      ]
+    },
+    {
+      "id": "R16",
+      "problem_type": "AF",
+      "trigger": "temporal gap within a modality",
+      "operator": "generative_completion",
+      "inspiring_standards": [
+        "5.2.2"
+      ]
+    },
+    {
+      "id": "R17",
+      "problem_type": "IF",
+      "trigger": "low temporal coherence",
+      "operator": "compensatory",
+      "inspiring_standards": [
+        "2.3.1"
+      ]
+    },
+    {
+      "id": "R18",
+      "problem_type": "HF",
+      "trigger": "semantic-prosodic clash",
+      "operator": "disentanglement",
+      "inspiring_standards": [
+        "3.1.3"
+      ]
+    }
+  ]
+}

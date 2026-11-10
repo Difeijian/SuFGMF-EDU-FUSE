@@ -1,0 +1,5 @@
+dataset,domain,samples,modalities,label_granularity,task_used
+EDU-FUSE,classroom interaction (staged),3847,T+A+V,3 levels + 8 behavior classes,3-level classification; 8-class recognition
+CMU-MOSEI,online opinion video,23453,T+A+V,7-class sentiment + 6 emotions,sentiment classification
+MUStARD,TV dialogue,690,T+A+V,binary (sarcasm/non-sarcasm),sarcasm detection
+HateMM,online video,1083,T+A+V,binary (hate/non-hate),hate-video detection

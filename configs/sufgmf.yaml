@@ -1,0 +1,30 @@
+# Hyperparameters reported in Table 3 and Section 5.3
+encoders:
+  linguistic: roberta-base        # hidden 768, <s> token
+  acoustic: wav2vec2-base         # hidden 768, mean-pooled over time
+  visual: video-swin-t            # hidden 768, 16 frames per clip
+projection_dim: 512
+diagnosis_mlp_hidden: 128
+compensatory:
+  temperature: 1.5
+  confidence_threshold_tau: 0.45
+disentanglement:
+  contradiction_threshold_phi: 0.60
+generative_completion:
+  cvae_latent_dim: 64
+recalibration:
+  eta_A: null   # not reported in the paper
+  eta_V: null   # not reported in the paper
+heads:
+  dropout: 0.3
+  tolerance_levels: [tolerant, ambiguous, intolerant]
+  behavior_classes: [C1, C2, C3, C4, C5, C6, C7, C8]
+training:
+  optimizer: AdamW
+  lr: 2.0e-5
+  scheduler: cosine
+  batch_size: 32
+  epochs: 30
+  seeds: [null, null, null, null, null]   # fill in the five seeds actually used
+  hardware: 4x NVIDIA A100
+loss_weights: {lambda1: null, lambda2: null, lambda3: null, lambda4: null}  # not reported in the paper
